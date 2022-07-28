@@ -1,0 +1,464 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="/user/userTemplate.xhtml"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:define name="content">
+        <style>
+ .banner_area {
+    position: relative;
+    background: url(images/banner.jpg) no-repeat center center;
+    z-index: 1;
+    min-height: 392px;
+    padding-top: 0 !important;
+}
+.banner_area .banner_inner {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    min-height: 392px;
+    z-index: 1;
+}
+.banner_area .banner_inner .overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgb(37 55 74 / 80%);
+}
+.banner_area .banner_inner .banner_content {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+}
+.banner_area .banner_inner .banner_content .page_link {
+    display: inline-block;
+    padding: 7px 20px;
+}
+.banner_area .banner_inner .banner_content .page_link a {
+    font-size: 15px;
+    color: #fff;
+    font-family: "Roboto", sans-serif;
+    margin-right: 20px;
+    position: relative;
+    text-transform: capitalize;
+}
+.banner_area .banner_inner .banner_content {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+}
+.banner_area .banner_inner .banner_content h2 {
+    color: #fff;
+    font-size: 45px;
+    margin-bottom: 0px;
+}
+.banner_area .banner_inner .banner_content .page_link {
+    display: inline-block;
+    padding: 7px 20px;
+}
+.banner_area .banner_inner .banner_content .page_link a {
+    font-size: 15px;
+    color: #fff;
+    font-family: "Roboto", sans-serif;
+    margin-right: 20px;
+    position: relative;
+    text-transform: capitalize;
+}
+.justify-content-center {
+    -ms-flex-pack: center !important;
+    justify-content: center !important;
+}
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+  .headingabt {
+    font-family: arial;
+    font-size: 32px;
+    margin: auto;
+    text-align: center;
+    margin-top: 70px;
+    margin-bottom: 30px;
+}
+
+.abtYatra {
+    color: #000000;
+    display: inline-block;
+    font-size: 13px;
+    height: 450px;
+    line-height: 30px;
+    overflow: hidden;
+    text-align: center;
+    word-spacing: 5px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.abtYatra p {
+    margin-bottom: 30px;
+}
+
+
+.stripblue {
+    background: url(https://ns.yatracdn.com/common/images/fresco/fresco-footer-images/about-us/stripnew.png) repeat-x;
+    height: 20px;
+    display: block;
+    background-position: 0 -66px;
+    margin-top: 35px;
+}
+.ourprod {
+    background-color: rgb(255 255 255 / 30%);
+    padding: 20px 0px;
+    display: inline-block;
+    width: 100%;
+}
+
+
+.headingabt {
+    font-family: arial;
+    font-size: 32px;
+    margin: auto;
+    text-align: center;
+    margin-top: 70px;
+    margin-bottom: 30px;
+}
+
+.main-content {
+    color: #414c5b;
+    margin: 0 auto 35px;
+    max-width: 1190px;
+}
+.wrapper-beetle *, .wrapper-beetle *:before, .wrapper-beetle *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    outline: 0;
+    font-family: 'Rubik',sans-serif;
+    font-weight: 400;
+}
+.prodWrap ul li {
+    margin-left: 7%;
+    height: 150px;
+    float: left;
+}
+.ourprodImg {
+/*    background: url(https://ns.yatracdn.com/common/images/fresco/fresco-footer-images/about-us/sprite-aboutus.png) no-repeat;*/
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+}
+
+
+
+.prodWrap ul li span {
+    margin-top: 14px;
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    font-family: LatoBold;
+}
+
+            </style>
+            
+        <section class="banner_area">
+        <div class="banner_inner d-flex align-items-center">
+            <div class="overlay"></div>
+            <div class="container" style="margin-top:100px;">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="banner_content text-center">
+                            <h2>About Us</h2>
+                            <div class="page_link">
+                                <a href="index.xhtml">Home</a>
+                                <a href="packages.xhtml">Book tour</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        <div class="Container">
+             <!--	Our Services-->
+      <section class="section section-sm">
+        <div class="container">
+          <h3>Our Services</h3>
+          <div class="row row-30">
+            <div class="col-sm-6 col-lg-4">
+              <article class="box-icon-classic">
+                <div class="unit box-icon-classic-body flex-column flex-md-row text-md-left flex-lg-column text-lg-center flex-xl-row text-xl-left">
+                  <div class="unit-left">
+                    <div class="box-icon-classic-icon fl-bigmug-line-equalization3"></div>
+                  </div>
+                  <div class="unit-body">
+                    <h5 class="box-icon-classic-title"><a href="#">Personalized Matching</a></h5>
+                    <p class="box-icon-classic-text">Our unique matching system lets you find just the tour you want for your next holiday.</p>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="col-sm-6 col-lg-4">
+              <article class="box-icon-classic">
+                <div class="unit box-icon-classic-body flex-column flex-md-row text-md-left flex-lg-column text-lg-center flex-xl-row text-xl-left">
+                  <div class="unit-left">
+                    <div class="box-icon-classic-icon fl-bigmug-line-circular220"></div>
+                  </div>
+                  <div class="unit-body">
+                    <h5 class="box-icon-classic-title"><a href="#">Wide Variety of Tours</a></h5>
+                    <p class="box-icon-classic-text">We offer a wide variety of personally picked tours with destinations all over the globe.</p>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="col-sm-6 col-lg-4">
+              <article class="box-icon-classic">
+                <div class="unit box-icon-classic-body flex-column flex-md-row text-md-left flex-lg-column text-lg-center flex-xl-row text-xl-left">
+                  <div class="unit-left">
+                    <div class="box-icon-classic-icon fl-bigmug-line-favourites5"></div>
+                  </div>
+                  <div class="unit-body">
+                    <h5 class="box-icon-classic-title"><a href="#">Highly Qualified Service</a></h5>
+                    <p class="box-icon-classic-text">Our tour managers are qualified, skilled, and friendly to bring you the best service.</p>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="col-sm-6 col-lg-4">
+              <article class="box-icon-classic">
+                <div class="unit box-icon-classic-body flex-column flex-md-row text-md-left flex-lg-column text-lg-center flex-xl-row text-xl-left">
+                  <div class="unit-left">
+                    <div class="box-icon-classic-icon fl-bigmug-line-headphones32"></div>
+                  </div>
+                  <div class="unit-body">
+                    <h5 class="box-icon-classic-title"><a href="#">24/7 Support</a></h5>
+                    <p class="box-icon-classic-text">You can always get professional support from our staff 24/7 and ask any question you have.</p>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="col-sm-6 col-lg-4">
+              <article class="box-icon-classic">
+                <div class="unit box-icon-classic-body flex-column flex-md-row text-md-left flex-lg-column text-lg-center flex-xl-row text-xl-left">
+                  <div class="unit-left">
+                    <div class="box-icon-classic-icon fl-bigmug-line-hot67"></div>
+                  </div>
+                  <div class="unit-body">
+                    <h5 class="box-icon-classic-title"><a href="#">Handpicked Hotels</a></h5>
+                    <p class="box-icon-classic-text">Our team offers only the best selection of affordable and luxury hotels to our clients.</p>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="col-sm-6 col-lg-4">
+              <article class="box-icon-classic">
+                <div class="unit box-icon-classic-body flex-column flex-md-row text-md-left flex-lg-column text-lg-center flex-xl-row text-xl-left">
+                  <div class="unit-left">
+                    <div class="box-icon-classic-icon fl-bigmug-line-wallet26"></div>
+                  </div>
+                  <div class="unit-body">
+                    <h5 class="box-icon-classic-title"><a href="#">Best Price Guarantee</a></h5>
+                    <p class="box-icon-classic-text">If you find tours that are cheaper than ours, we will compensate the difference.</p>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+             
+             <!-- Different People-->
+      <section class="section section-sm">
+        <div class="container">
+          <h3 class="title-block find-car oh"><span class="d-inline-block wow slideInUp">Different People — One Mission</span></h3>
+          <div class="row row-30 justify-content-center box-ordered">
+            <div class="col-sm-6 col-md-5 col-lg-3">
+              <!-- Team Modern-->
+              <article class="team-modern">
+                <div class="team-modern-header"><a class="team-modern-figure" href="#"><img class="img-circles" src="images/train.jpg" alt="" width="118" style="height: 118px;"/></a>
+                  <svg x="0px" y="0px" width="270px" height="70px" viewbox="0 0 270 70" enable-background="new 0 0 270 70" >
+                    <g>
+                      <path fill="#161616" d="M202.085,0C193.477,28.912,166.708,50,135,50S76.523,28.912,67.915,0H0v70h270V0H202.085z"></path>
+                    </g>
+                  </svg>
+                </div>
+                <div class="team-modern-caption">
+                  <h6 class="team-modern-name"><a href="#">Diana Robinson</a></h6>
+                  <p class="team-modern-status">Founder, Owner</p>
+                  <h6 class="team-modern-phone"><a href="tel:#">+1 323-913-4688</a></h6>
+                </div>
+              </article>
+            </div>
+            <div class="col-sm-6 col-md-5 col-lg-3">
+              <!-- Team Modern-->
+              <article class="team-modern">
+                <div class="team-modern-header"><a class="team-modern-figure" href="#"><img class="img-circles" src="images/bus.jpg" alt="" width="118" style="height: 118px;"/></a>
+                  <svg x="0px" y="0px" width="270px" height="70px" viewbox="0 0 270 70" enable-background="new 0 0 270 70" >
+                    <g>
+                      <path fill="#161616" d="M202.085,0C193.477,28.912,166.708,50,135,50S76.523,28.912,67.915,0H0v70h270V0H202.085z"></path>
+                    </g>
+                  </svg>
+                </div>
+                <div class="team-modern-caption">
+                  <h6 class="team-modern-name"><a href="#">Peter McMillan</a></h6>
+                  <p class="team-modern-status">Travel Agent</p>
+                  <h6 class="team-modern-phone"><a href="tel:#">+1 323-913-4688</a></h6>
+                </div>
+              </article>
+            </div>
+            <div class="col-sm-6 col-md-5 col-lg-3">
+              <!-- Team Modern-->
+              <article class="team-modern">
+                <div class="team-modern-header"><a class="team-modern-figure" href="#"><img class="img-circles" src="images/house.jpg"  alt="" width="118" style="height: 118px;"/></a>
+                  <svg x="0px" y="0px" width="270px" height="70px" viewbox="0 0 270 70" enable-background="new 0 0 270 70" >
+                    <g>
+                      <path fill="#161616" d="M202.085,0C193.477,28.912,166.708,50,135,50S76.523,28.912,67.915,0H0v70h270V0H202.085z"></path>
+                    </g>
+                  </svg>
+                </div>
+                <div class="team-modern-caption">
+                  <h6 class="team-modern-name"><a href="#">Jill Peterson</a></h6>
+                  <p class="team-modern-status">Tour Consultant</p>
+                  <h6 class="team-modern-phone"><a href="tel:#">+1 323-913-4688</a></h6>
+                </div>
+              </article>
+            </div>
+            <div class="col-sm-6 col-md-5 col-lg-3">
+              <!-- Team Modern-->
+              <article class="team-modern">
+                <div class="team-modern-header"><a class="team-modern-figure" href="#"><img class="img-circles"  src="images/people.jpg" alt="" width="118" style="height: 118px;"/></a>
+                  <svg x="0px" y="0px" width="270px" height="70px" viewbox="0 0 270 70" enable-background="new 0 0 270 70">
+                    <g>
+                      <path fill="#161616" d="M202.085,0C193.477,28.912,166.708,50,135,50S76.523,28.912,67.915,0H0v70h270V0H202.085z"></path>
+                    </g>
+                  </svg>
+                </div>
+                <div class="team-modern-caption">
+                  <h6 class="team-modern-name"><a href="#">James Smith</a></h6>
+                  <p class="team-modern-status">PR Manager</p>
+                  <h6 class="team-modern-phone"><a href="tel:#">+1 323-913-4688</a></h6>
+                </div>
+              </article>
+            </div>
+              
+          </div>
+        </div>
+      </section>
+<!--    
+        <div class="abtYatra" id="company"> 
+            
+            <div class="headingabt abt">About Yatra</div>
+            <p>We are a leading online travel company in India providing a 'best in class' 
+                customer experience with the goal to be
+                'India's Travel Planner'. Through our website, www.yatra.com,
+                our mobile applications and our other associated platforms, leisure and business 
+                travelers can explore, research, compare prices and book a wide range of services 
+                catering to their travel needs. Since our inception in 2006, more than 7 million customers 
+                have used one or more of our comprehensive travel-related services, which include domestic 
+                and international air ticketing, hotel bookings, homestays, holiday packages,
+                bus ticketing, rail ticketing, activities and ancillary services. With over
+                <span class="hotelCount">103,000</span> hotels contracted across India,
+                we are India's largest platform for domestic hotels. </p> <p>A strong and "trusted" travel
+                    brand of India, our strengths include a large and loyal customer base, a multi-channel
+                    platform for leisure and business travelers, a robust mobile eco-system for a spectrum 
+                    of travelers and suppliers, a strong technology platform designed to deliver a high 
+                    level of scalability and innovation and a seasoned senior management team comprising
+                    of industry executives with deep roots in the travel industry in India and abroad.</p> 
+            <p>"Yatra", which means "Journey" in Hindi, is one of India's most well-recognized and awarded
+                brands. Among others, we have won multiple awards from the Ministry of Tourism, 
+                Government of India, including the National Tourism Award for
+                "Outstanding Performance as a Domestic Tour Operator" in Category I (Rest of India) 
+                for the assessment year 2014-15; three awards at the India Tourism Awards for 
+                'Outstanding performance as a Domestic Tour Operator (Rest of India)','Outstanding 
+                performance as a Domestic Tour Operator in Jammu and Kashmir' and 'Outstanding
+                performance as an Inbound Tour Operator-Cat C in 2013 &amp; the 'Best Domestic Tour
+                Operator' award in 2010. Some other industry awards are: ET ("Economic Times") Brand
+                Equity's Most Trusted Online Travel Brand of 2015; Travel &amp; Hospitality named us the
+                Most Outstanding Online Company: business to consumer or B2C; and in 2014, Yatra.com won
+                the CNBC Awaaz Travel Award. In 2013, we were recognized by Matrixlab as the Most Popular 
+                Brand in Travel &amp; Leisure Category and in 2012, Yatra.com won the award for 'Best Travel
+                Website' in IAMAI's Annual India Digital Awards. </p> <p>The acquisition of companies, 
+                    intellectual property and talented individuals has been central to our growth strategy.
+                    In 2010, we acquired TSI and its subsidiaries in order to expand our B2B business, 
+                    particularly our international air ticketing for small and medium scale enterprises. 
+                    In 2012, we acquired Travelguru B2B and B2C entities from Travelocity, which remain 
+                    well-established hotel aggregators in India. Through this acquisition, we expanded our
+                    hotel business by establishing more direct hotel relationships in India and improved our 
+                    inventory of affordable travel options. Recently, we also acquired Air Travel Bureau Ltd.
+                    ("ATB"), India's largest independent corporate travel services provider to further
+                    strengthen our position in the growing corporate travel market in India. Now, with this
+                    combined entity, Yatra is the largest corporate travel services platform in India by 
+                    Gross Bookings. We have also leveraged our leading position in the Indian travel 
+                    ecosystem to make several "acqui-hires", including the teams from mGaadi and dudegenie, 
+                    in order to grow our business. </p> <p>We are dedicated to ensuring a superior user
+                        experience on our platform and a critical component of that is customer service
+                        . We provide customer support at all stages of our customer's journey – before,
+                        during and after. Our customer "touch-points" include our website, mobile platforms,
+                        retail stores, call centres, a network of over 17,000 agents across India addressing 
+                        the needs of a large fragmented market of travel agents and a portfolio of B2E 
+                        clients across India employing over 4 million people. </p> <p><b>You can also 
+                                follow Yatra.com on:</b><br> </br>
+                                Facebook &nbsp;
+                               (<a href="http://www.facebook.com/Yatra">http://www.facebook.com/Yatra</a>)
+                               <br></br>&nbsp;Twitter 
+                               (<a href="https://twitter.com/YatraOfficial">http://twitter.com/YatraOfficial</a>)<br></br> &nbsp;
+                                       Instagram (<a href="https://instagram.com/yatradotcom/">https://instagram.com/yatradotcom/</a>)<br> </br>&nbsp;
+                                           Google +(<a href="https://plus.google.com/+yatracom">https://plus.google.com/+yatracom</a>)
+                                </p> </div>
+            
+            <div class="stripblue"></div>
+            
+            <div class="ourprod"> <div class="headingabt">Our Products</div> 
+                <div class="prodWrap main-content">
+                     <ul> 
+                         <li>
+                             <div>
+                                 <a href="#" class="ourprodImg fa-plane" style="font-size:80px;margin-left:50px;" title="Flights"></a>
+                             </div>
+                             <span class="prodName">Flights</span>
+                         </li> 
+                         <li>
+                             <div>
+                                 <a href="#" class="ourprodImg fa-home" style="font-size:80px;margin-left:50px;" title="Hotels"></a>
+                             </div>
+                             <span class="prodName">Hotels</span>
+                         </li>
+                         <li>
+                             <div>
+                                 <a href="#" class="ourprodImg Example of train fa-train" style="font-size:80px;margin-left:50px;" title="Trains"></a>
+                             </div>
+                             <span class="prodName">Trains</span>
+                         </li> 
+                         <li>
+                             <div>
+                                 <a href="#" class="ourprodImg fa-unlock-alt" style="font-size:80px;margin-left:50px;" title="Holidays"></a>
+                             </div>
+                             <span class="prodName">Holidays</span>
+                         </li>
+                         <li>
+                             <div>
+                                 <a href="#" class="ourprodImg fa-bus" style="font-size:80px;margin-left:50px;" title="bus"></a>
+                             </div>
+                             <span class="prodName">Bus</span>
+                         </li> 
+                          
+                     </ul>
+                </div> 
+            </div>
+            
+            <div class="stripblue"></div>-->
+          
+        </div>
+	    </ui:define>
+</ui:composition>

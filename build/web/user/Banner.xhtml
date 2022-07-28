@@ -1,0 +1,249 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <style>
+            * {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Georgia", serif;
+  font-size: 16px;
+  line-height: 1.4;
+  background-color: white;
+  overflow-x: hidden;
+}
+
+.main1 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  transform: translate3d(0, 0, 0);
+}
+@media (min-width: 630px) {
+  .main1 {
+    flex-direction: row;
+    width: 130%;
+    margin-left: -15%;
+  }
+}
+
+.main1 .section1:not(:first-child):not(:last-child):hover {
+  flex: 1.3 !important;
+}
+.main1 .section1:not(:first-child):not(:last-child):hover:after {
+  opacity: 0.7;
+}
+.main1 .section1:not(:first-child):not(:last-child):hover .article1 {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.2s 0.2s, transform 0.2s 0.2s;
+}
+@media (min-width: 630px) {
+  .main1 .section1:not(:first-child):not(:last-child):hover .article1 {
+    transform: translateY(0) skewX(-15deg);
+  }
+}
+
+.section1 {
+  flex: 1;
+  position: relative;
+  width: 100%;
+  min-height: 70vh;
+  overflow: hidden;
+  z-index: 1;
+  transition: flex-grow 0.2s, opacity 0.2s;
+}
+.section1:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  transition: transform 0.2s, width 0.2s;
+}
+.section1:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.2 !important;
+  transition: opacity 0.2s;
+}
+
+
+@media (min-width: 630px) {
+  .section1 {
+    width: 20%;
+    height: 70vh;
+    margin-right: -1px;
+    transform: skewX(15deg) translateZ(0);
+  }
+  .section1:before {
+    left: -100%;
+    width: 400%;
+    transform: skewX(-15deg);
+  }
+}
+.section1:nth-child(1):before {
+  background-color: #e60000;
+  background-image: url(images/heritage.jpg);
+}
+.hide-images .section1:nth-child(1):before {
+  background-image: none;
+}
+.section1:first-child:before, .section1:last-child:before {
+  background-color: #660000;
+}
+.section1:first-child:after, .section1:last-child:after {
+  opacity: 0.5;
+}
+.section1:first-child .article1, .section1:last-child .article1 {
+  display: none;
+}
+.section1:nth-child(2):before {
+  background-color: #cc0000;
+  background-image: url(images/people.jpg);
+}
+.hide-images .section1:nth-child(2):before {
+  background-image: none;
+}
+.section1:first-child:before, .section1:last-child:before {
+  background-color: #660000;
+}
+.section1:first-child:after, .section1:last-child:after {
+  opacity: 0.5;
+}
+.section1:first-child .article1, .section1:last-child .article1 {
+  display: none;
+}
+.section1:nth-child(3):before {
+  background-color: #b30000;
+  background-image: url(images/Kashmir.jpg);
+}
+.hide-images .section1:nth-child(3):before {
+  background-image: none;
+}
+.section1:first-child:before, .section1:last-child:before {
+  background-color: #660000;
+}
+.section1:first-child:after, .section1:last-child:after {
+  opacity: 0.5;
+}
+.section1:first-child .article1, .section1:last-child .article1 {
+  display: none;
+}
+.section1:nth-child(4):before {
+  background-color: #990000;
+  background-image: url(images/beach.jpg);
+}
+.hide-images .section1:nth-child(4):before {
+  background-image: none;
+}
+.section1:first-child:before, .section1:last-child:before {
+  background-color: #660000;
+}
+.section1:first-child:after, .section1:last-child:after {
+  opacity: 0.5;
+}
+.section1:first-child .article1, .section1:last-child .article1 {
+  display: none;
+}
+.section1:nth-child(5):before {
+  background-color: maroon;
+  background-image: url(images/Himachal1.jpg);
+}
+.hide-images .section1:nth-child(5):before {
+  background-image: none;
+}
+.section1:first-child:before, .section1:last-child:before {
+  background-color: #660000;
+}
+.section1:first-child:after, .section1:last-child:after {
+  opacity: 0.5;
+}
+.section1:first-child .article1, .section1:last-child .article1 {
+  display: none;
+}
+
+.article1 {
+  position: relative;
+  padding: 24px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: white !important;
+  z-index: 1;
+  transition: opacity 0.2s, transform 0.2s;
+}
+@media (min-width: 630px) {
+  .article1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    color:white !important;
+    opacity: 0;
+    transform: translateY(24px) skewX(-15deg);
+  }
+}
+
+h2 {
+  font-size: 32px;
+  color:white;
+  margin-bottom: 12px;
+}
+
+            </style>
+    </h:head>
+    <h:body>
+        
+<main class="main1">
+  <section class="section1">
+    <article class="article1">
+      <h2>Wonder Tour</h2>
+      <p>For Your Best Trip.</p>
+    </article>
+  </section>
+  <section class="section1">
+    <article class="article1">
+       <h2>Wonder Tour</h2>
+      <p>For Your Best Trip.</p>
+    </article>
+  </section>
+  <section class="section1">
+    <article class="article1">
+       <h2>Wonder Tour</h2>
+      <p>For Your Best Trip.</p>
+    </article>
+  </section>
+  <section class="section1">
+    <article class="article1">
+       <h2>Wonder Tour</h2>
+      <p>For Your Best Trip.</p>
+    </article>
+  </section>
+  <section class="section1">
+    <article class="article1">
+       <h2>Wonder Tour</h2>
+      <p>For Your Best Trip.</p>
+    </article>
+  </section>
+</main>
+    </h:body>
+    
+</html>
+

@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
+    <link href="css/SearchCSS.css" rel="stylesheet" type="text/css"/>
+    <!--search-->
+    <div class="home-trip-search primary-bg">
+        <div class="container">
+            <h:form class="trip-search-inner d-flex">
+                <div class="col-md-2 group-input i1">
+                    <label> Search By Category* </label>
+                    <div class="Container-f"></div>
+                    <h:selectOneMenu id="txtcname" class="form-control" value="#{adminManagedBean.spCatId}">
+                        <f:selectItems value="#{adminManagedBean.categoryList()}" var="b"
+                                       itemLabel="#{b.categoryName}"
+                                       itemValue="#{b.categoryID}"></f:selectItems>
+                    </h:selectOneMenu>                  
+                </div>
+                <div class="col-md-2 group-input i1" style="margin-left: 18px;">
+                    <label> Search State* </label>
+                    <div class="Container-f"></div>
+                    <h:selectOneMenu id="txtsname" class="form-control" value="#{adminManagedBean.spStaId}">
+                        <f:selectItems value="#{adminManagedBean.statelist}" var="b"
+                                       itemLabel="#{b.stateName}"
+                                       itemValue="#{b.stateID}"></f:selectItems>
+                    </h:selectOneMenu>                  
+                </div>
+                <div class="col-md-2 group-input i1">
+                    <div class="col-md-12">
+                        <label> no of days</label></div>
+                    <div class="col-md-12">
+                        <h:inputText id="txtnod" value="#{adminManagedBean.spNOD}" title="nod" required="true" requiredMessage="This field is required."/>
+
+                    </div>
+                </div>
+                <div class="group-input col-md-2 i1" style="margin-left: 33px;">
+                    <div class="col-md-12"><label> charge </label></div>
+                    <!--<i class="far fa-calendar"></i>-->
+                    <div class="col-md-12"> 
+                        <h:inputText id="txtCps" value="#{adminManagedBean.spPackageCharge}" title="PC" required="true" requiredMessage="This field is required."/>
+                        <!--                         <br/>
+                                                                        <h:message for="txtCps" style="color:red" />
+                                                                      <br/>-->
+                    </div>
+
+                    <!--<input class="input1" type="text" name="sa" placeholder="Package charge"></input>-->
+                </div>
+                <div class="group-input col-md-2 search" style="margin-left: 108px;">
+                       <h:commandButton action="#{adminManagedBean.searchPackagesIndex()}" class="submitSearch" value="Find"/>
+
+                </div>
+            </h:form>
+        </div>
+    </div>
+
+</ui:composition>

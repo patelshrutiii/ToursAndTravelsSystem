@@ -1,0 +1,373 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="/user/userTemplate.xhtml"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:define name="content">
+  <head>
+      <style>
+          .cart-list-inner {
+    padding-bottom: 100px;
+}
+.cart-list-inner .table {
+    margin-bottom: 60px;
+    border-width: 0 1px 0 1px;
+    border-style: solid;
+    border-color: #dee2e6;
+}
+.table>thead {
+    vertical-align: bottom;
+}
+tbody, td, tfoot, th, thead, tr {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+}
+.cart-list-inner .table thead tr th {
+    background-color: #3A78C9;
+    color: #ffffff;
+    border: none;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 15px;
+}
+.cart-list-inner .table tr td {
+    color: #383838;
+    vertical-align: middle;
+    border-bottom: 1px solid #dee2e6;
+    border-top: none;
+    position: relative;
+    padding: 20px;
+    font-size: 16px;
+}
+.cart-list-inner .table tr td .close {
+    color: #3A78C9;
+    border: none;
+    background-color: transparent;
+    float: left;
+    position: relative;
+    top: 15px;
+    margin-right: 15px;
+}
+.cart-list-inner .table tr td .close {
+    color: #3A78C9;
+    border: none;
+    background-color: transparent;
+    float: left;
+    position: relative;
+    top: 15px;
+    cursor: pointer;
+    margin-right: 15px;
+}
+.cart-list-inner .table tr .cartImage {
+    display: block;
+    overflow: hidden;
+    width: 70px;
+    margin-right: 10px;
+}
+.cart-list-inner .table tr td {
+    color: #383838;
+    vertical-align: middle;
+    border-bottom: 1px solid #dee2e6;
+    border-top: none;
+    position: relative;
+    padding: 20px;
+    font-size: 16px;
+}
+.cart-list-inner .table tr td.count-input div {
+    /* display: -webkit-box; */
+    display: -moz-box;
+    display: -ms-flexbox;
+    /* display: -webkit-flex; */
+    /* display: flex; */
+    /* -webkit-align-items: center; */
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -ms-flex-align: center;
+    /* align-items: center; */
+    /* -webkit-flex-wrap: wrap; */
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    /* flex-wrap: wrap; */
+}
+.cart-list-inner .table tr td.count-input a {
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    border-radius: 100%;
+    color: #383838;
+    font-size: 10px;
+    display: inline-block;
+    border: 1px solid #e4e4e4;
+    line-height: 41px;
+    height: 41px;
+    width: 40px;
+    text-align: center;
+}
+.cart-list-inner .table tr td input {
+    width: 40px;
+    font-size: 16px;
+    height: 41px;
+    text-align: center;
+    color: #223645;
+    border-width: 1px;
+    border-color: #e4e4e4;
+    border-style: solid;
+    padding: 0;
+    margin: 0 5px;
+}
+input[type=text], input[type=email], input[type=url], input[type=password], input[type=search], input[type=number], input[type=tel], input[type=range], input[type=date], input[type=month], input[type=week], input[type=time], input[type=datetime], input[type=datetime-local], input[type=color], textarea, select {
+    background-color: #F8F8F8;
+    border: 1px solid #d9d9d9;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    border-radius: 25px;
+    font-size: 14px;
+    padding: 0 15px;
+}
+.cart-list-inner .updateArea {
+    border-top: 1px solid #dee2e6;
+}
+.cart-list-inner .totalAmountArea, .cart-list-inner .updateArea, .cart-list-inner .checkBtnArea {
+    display: block;
+    padding: 20px 30px;
+    border-left: 1px solid #dee2e6;
+    border-right: 1px solid #dee2e6;
+    border-bottom: 1px solid #dee2e6;
+}
+.cart-list-inner .updateArea {
+    border-top: 1px solid #dee2e6;
+}
+.cart-list-inner .totalAmountArea, .cart-list-inner .updateArea, .cart-list-inner .checkBtnArea {
+    display: block;
+    padding: 20px 30px;
+    border-left: 1px solid #dee2e6;
+    border-right: 1px solid #dee2e6;
+    border-bottom: 1px solid #dee2e6;
+}
+.cart-list-inner .updateArea .input-group {
+    display: inline-block;
+    margin-bottom: 0;
+    width: auto;
+}
+
+.input-group {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 100%;
+}
+.input-group:not(.has-validation)>.dropdown-toggle:nth-last-child(n+3), .input-group:not(.has-validation)>:not(:last-child):not(.dropdown-toggle):not(.dropdown-menu) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.cart-list-inner .updateArea .input-group .form-control {
+    width: auto;
+    display: inline-block;
+    margin-right: 15px;
+}
+.cart-list-inner .updateArea .input-group input {
+    height: 47px;
+}
+.input-group>:not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+    margin-left: -1px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.cart-list-inner .updateArea a {
+    padding: 12px 20px;
+    font-weight: 400;
+}
+.outline-btn {
+    padding: 15px 30px;
+    border: 2px solid #3A78C9;
+    color: #3A78C9;
+    display: inline-block;
+    position: relative;
+    -webkit-transition: background-color 0.3s, border-color 0.3s;
+    -moz-transition: background-color 0.3s, border-color 0.3s;
+    -ms-transition: background-color 0.3s, border-color 0.3s;
+    -o-transition: background-color 0.3s, border-color 0.3s;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+.outline-btn, .round-btn {
+    font-size: 16px;
+    line-height: 1.1;
+    padding: 17px 30px;
+    font-weight: 400;
+    font-family: "Poppins", sans-serif;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    border-radius: 25px;
+    text-transform: uppercase;
+}
+.cart-list-inner .updateArea a.update-btn {
+    float: right;
+}
+
+.cart-list-inner .updateArea a {
+    padding: 12px 20px;
+    font-weight: 400;
+}
+.outline-btn {
+    padding: 15px 30px;
+    border: 2px solid #3A78C9;
+    color: #3A78C9;
+    display: inline-block;
+    position: relative;
+    -webkit-transition: background-color 0.3s, border-color 0.3s;
+    -moz-transition: background-color 0.3s, border-color 0.3s;
+    -ms-transition: background-color 0.3s, border-color 0.3s;
+    -o-transition: background-color 0.3s, border-color 0.3s;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+.outline-btn, .round-btn {
+    font-size: 16px;
+    line-height: 1.1;
+    padding: 17px 30px;
+    font-weight: 400;
+    font-family: "Poppins", sans-serif;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    border-radius: 25px;
+    text-transform: uppercase;
+}
+.cart-list-inner .totalAmountArea ul {
+    margin: 0;
+    padding: 0;
+    float: right;
+    text-align: right;
+}
+
+.list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+.cart-list-inner .totalAmountArea ul li {
+    margin-bottom: 10px;
+}
+.cart-list-inner .totalAmountArea ul li span {
+    width: 108px;
+    display: inline-block;
+}
+.text-right {
+    text-align: right;
+}
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+    cursor: pointer;
+}
+.round-btn {
+    background-color: #3A78C9;
+    border: none;
+    color: #ffffff;
+    display: inline-block;
+    position: relative;
+    -webkit-transition: background-color 0.3s;
+    -moz-transition: background-color 0.3s;
+    -ms-transition: background-color 0.3s;
+    -o-transition: background-color 0.3s;
+    transition: background-color 0.3s;
+}
+
+.outline-btn, .round-btn {
+    font-size: 16px;
+    line-height: 1.1;
+    padding: 17px 30px;
+    font-weight: 400;
+    font-family: "Poppins", sans-serif;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    border-radius: 25px;
+    text-transform: uppercase;
+}
+button, [type=button], [type=reset], [type=submit] {
+    -webkit-appearance: button;
+}
+</style>
+  </head>
+    
+  <body>
+          <div class="cart-list-inner" style="margin-top:30px;">
+                  <div class="container">
+                     <form method="get" action="#">
+                        <div class="table-responsive">
+                           <table class="table">
+                              <thead>
+                                 <tr>
+                                   <th></th>
+                                   <th>Product Name</th>
+                                   <th>Price</th>
+                                   <th>Quantity</th>
+                                   <th>Sub Total</th>
+                                 </tr>
+                              </thead>
+                              <tbody><tr>
+                                 <td class="">
+                                    <button class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                    <span class="cartImage"><img src="assets/images/img5.jpg" alt="image"/></span>
+                                 </td>
+                                 <td data-column="Product Name">SUMMER HOLIDAY TO THE OXOLOTAN RIVER</td>
+                                 <td data-column="Price">$ 1140.00</td>
+                                 <td data-column="Quantity" class="count-input">
+                                    <div>
+                                       <a class="minus-btn" href="#"><i class="fa fa-minus"></i></a>
+                                       <input class="quantity" type="text" value="1"/>
+                                       <a class="plus-btn" href="#"><i class="fa fa-plus"></i></a>
+                                    </div>
+                                 </td>
+                                <td data-column="Sub Total">$ 1140.00</td>
+                              </tr>  
+                              <tr>
+                                 <td class="">
+                                    <button class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                    <span class="cartImage"><img src="assets/images/img6.jpg" alt="image"/></span>
+                                 </td>
+                                 <td data-column="Product Name">SANTORINI ISLAND'S WEEKEND VACATION</td>
+                                 <td data-column="Price">$ 1300.00</td>
+                                 <td data-column="Quantity" class="count-input">
+                                    <div>
+                                       <a class="minus-btn" href="#"><i class="fa fa-minus"></i></a>
+                                       <input class="quantity" type="text" value="1"/>
+                                       <a class="plus-btn" href="#"><i class="fa fa-plus"></i></a>
+                                    </div>
+                                 </td>
+                                 <td data-column="Sub Total">$ 1300.00</td>
+                              </tr>
+                          </tbody></table>
+                        </div>
+                        <div class="updateArea">
+                          <div class="input-group">
+                              <input type="text" class="form-control" placeholder="I have a discount coupon"/>
+                              <a href="#" class="outline-btn">apply coupon</a>
+                          </div>
+                           <a href="#" class="outline-btn update-btn">update cart</a>
+                        </div>
+                        <div class="totalAmountArea">
+                           <ul class="list-unstyled">
+                              <li><strong>Sub Total</strong> <span>$ 3600.00</span></li>
+                              <li><strong>Vat</strong> <span>$ 18.00</span></li>
+                              <li><strong>Grand Total</strong> <span class="grandTotal">$ 3680.00</span></li>
+                           </ul>
+                        </div>
+                         <div class="checkBtnArea text-right" style="margin-top: 77px;">
+                          <button type="submit" class="round-btn">checkout</button>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+  </body>
+    </ui:define>
+</ui:composition>
+

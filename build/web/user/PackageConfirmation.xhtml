@@ -1,0 +1,324 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="/user/userTemplate.xhtml"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:define name="content">
+  <head>
+      <style>
+.success-notify {
+    background-color: #3A78C9;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    padding: 30px;
+    color: #ffffff;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    border-radius: 15px;
+    margin-bottom: 60px;
+}
+.success-notify .success-icon i {
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    border-radius: 100%;
+    border: 3px solid #ffffff;
+    line-height: 80px;
+    height: 80px;
+    width: 80px;
+    text-align: center;
+    font-size: 32px;
+}
+.success-notify .success-content {
+    margin-left: 20px;
+}
+.confirmation-details table {
+    margin-bottom: 60px;
+}
+table.table {
+    color: #737373;
+}
+.table {
+    --bs-table-bg: transparent;
+    --bs-table-accent-bg: transparent;
+    --bs-table-striped-color: #212529;
+    --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
+    --bs-table-active-color: #212529;
+    --bs-table-active-bg: rgba(0, 0, 0, 0.1);
+    --bs-table-hover-color: #212529;
+    --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+    vertical-align: top;
+    border-color: #dee2e6;
+}
+table {
+    color: #737373;
+    margin: 0 0 1.5em;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-width: 1px 0 0 1px;
+    width: 100%;
+    font-size: 15px;
+}
+.confirmation-details table tr:nth-of-type(odd) {
+    background-color: #F1F1F1;
+}
+tbody, td, tfoot, th, thead, tr {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+}
+.confirmation-details table tr td {
+    color: #383838;
+    width: 50%;
+    border: none;
+}
+.table>:not(caption)>*>* {
+    /* padding: .5rem .5rem; */
+    /* background-color: var(--bs-table-bg); */
+    /* border-bottom-width: 1px; */
+    /* box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg); */
+}
+.confirmation-outer .price-table-summary {
+    background-color: #F8F8F8;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    border-radius: 25px;
+    margin-bottom: 50px;
+    padding: 30px;
+}
+/*4no bhag*/
+.booking-section .price-table-summary {
+    background-color: #F8F8F8;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    border-radius: 25px;
+    margin-bottom: 50px;
+    padding: 30px;
+}
+.confirmation-outer .price-table-summary .bg-title {
+    background-color: #3A78C9;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    border-radius: 25px;
+    color: #ffffff;
+    padding: 10px 15px;
+    text-align: center;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+table {
+    color: #737373;
+    margin: 0 0 1.5em;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-width: 1px 0 0 1px;
+    width: 100%;
+    font-size: 15px;
+}
+.confirmation-outer .price-table-summary table tr td {
+    border-right: none;
+}
+th, td {
+    padding: 8px;
+}
+td {
+    border-width: 0 1px 1px 0;
+    border-bottom: 1px solid #e6e6e6;
+}
+.fa, .fas {
+    font-weight: 900;
+}
+.confirmation-outer .price-table-summary table tr:last-child td {
+    border-bottom: none;
+}
+.confirmation-outer .widget-support-wrap {
+    background-color: #F8F8F8;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    border-radius: 25px;
+    padding: 30px;
+    text-align: center;
+}
+.confirmation-outer .widget-support-wrap .icon {
+    font-size: 52px;
+    margin-bottom: 15px;
+    line-height: 1;
+}
+.ekit-wid-con .fasicon, .ekit-wid-con .icon, .ekit-wid-con .icon::before, .fasicon, .icon, .icon::before {
+    font-family: elementskit!important;
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+      </style>
+  </head>
+    
+  <body>
+      <h:form>
+      <div class="confirmation-outer" style="margin-top:30px;">
+                  <div class="container">
+                     <div class="success-notify">
+                        <div class="success-icon">
+                           <i class="fas fa-check"></i>
+                        </div>
+                        <div class="success-content">
+                           <h3>PAYMENT CONFIRMED</h3>
+                           <p>Thank you, your payment has been successful and your booking is now confirmed.A confirmation email has been sent to info@travele.com.</p>
+                        </div>
+                     </div>
+                     <div class="confirmation-inner">
+                        <div class="row">
+                           <div class="col-lg-8 right-sidebar">
+                               <c:forEach items="#{loginBean.packbooktopay}" var="H">
+
+                              <div class="confirmation-details">
+                                 <h3>BOOKING DETAILS</h3>
+                                 <table class="table">
+                                    <tbody>
+                                       <tr>
+                                          <td>Booking id:</td>
+                                          <td>#{H.packageBookingID}</td>
+                                       </tr>
+                                       <tr>
+                                          <td>First Name:</td>
+                                          <td>David</td>
+                                       </tr>
+                                       <tr>
+                                          <td>Last Name:</td>
+                                          <td>Willson</td>
+                                       </tr>
+                                       <tr>
+                                          <td>Email:</td>
+                                          <td>info@company.com</td>
+                                       </tr>
+                                       <tr>
+                                          <td>Phone</td>
+                                          <td>044 - 222 - 666 - 777</td>
+                                       </tr>
+                                       <tr>
+                                          <td>Card number</td>
+                                          <td>XXX-XXXX-XXX-08</td>
+                                       </tr>
+                                       <tr>
+                                          <td>Country:</td>
+                                          <td>Europe</td>
+                                       </tr>
+                                       <tr>
+                                          <td>Zip Code</td>
+                                          <td>9764</td>
+                                       </tr>
+                                       <tr>
+                                          <td>Address</td>
+                                          <td>3146 Koontz, California</td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                                 <div class="details payment-details">
+                                    <h3>PAYMENT</h3>
+                                    <div class="details-desc">
+                                       <p>Payment is successful via Visa card</p>
+                                    </div>
+                                 </div>
+                                 <div class="details">
+                                    <h3>VIEW BOOKING DETAILS</h3>
+                                    <div class="details-desc">
+                                       <p><a href="#">https://www.traveler.com/index.html</a></p>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-4">
+                           <div class="price-table-summary">
+                              <h4 class="bg-title">Summary</h4>
+                              <table>
+                                 <tbody>
+                                    <tr>
+                                       <td>
+                                          <strong>Packages cost </strong>
+                                       </td>
+                                       <td class="text-right">
+                                          $500
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td>
+                                          <strong>Dedicated tour guide</strong>
+                                       </td>
+                                       <td class="text-right">
+                                          $60
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td>
+                                          <strong>Insurance</strong>
+                                       </td>
+                                       <td class="text-right">
+                                          $40
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td>
+                                          <strong>tax</strong>
+                                       </td>
+                                       <td class="text-right">
+                                          13%
+                                       </td>
+                                    </tr>
+                                    <tr class="total">
+                                       <td>
+                                          <strong>Total cost</strong>
+                                       </td>
+                                       <td class="text-right">
+                                          <strong>$580</strong>
+                                       </td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </div>
+                           <div class="widget-bg widget-support-wrap">
+                              <div class="icon">
+                                 <i class="fas fa-phone-volume"></i>
+                              </div>
+                              <div class="support-content">
+                                 <h5>HELP AND SUPPORT</h5>
+                                 <a href="telto:12345678" class="phone">+55 123 987 00</a>
+                                 <small>Monday to Friday 9.00am - 7.30pm</small>
+                              </div>
+                           </div>
+                        </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+          </h:form>
+  </body>
+    </ui:define>
+</ui:composition>
+

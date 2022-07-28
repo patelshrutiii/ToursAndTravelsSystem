@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="/user/userTemplate.xhtml"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:define name="content">
+        <style>
+            body {
+  
+  color: #FFFFFF;
+  
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.wave {
+  float: left;
+  margin: 10px;
+  animation: wave  ease-in-out 0.7s infinite alternate;
+  transform-origin: center 25px;
+}
+
+.wave:hover {
+  animation-play-state: paused;
+  cursor: pointer;
+}
+
+.wave img {
+  border: 5px solid #f8f8f8;
+  display: block;
+  width: 200px;
+  height: 250px;
+}
+
+.wave figcaption {
+  text-align: center;
+}
+
+.wave:after{
+  content: '';
+  position: absolute;
+  width: 20px; 
+  height: 20px;
+  border: 1.5px solid #ffffff;
+  top: -10px; 
+  left: 50%;
+  border-bottom: none;
+  border-right: none;
+  transform: rotate(10deg);
+}
+ 
+@keyframes wave {
+  0% { transform: rotate(4deg); }
+  100% { transform: rotate(-4deg); }
+}
+figcaption{
+    color: black;
+}
+
+
+            </style>
+    <h:form>
+     <div class="container" style="margin-top: 20px;margin-left: 20%;">
+         
+<div class="row">
+  <figure class="wave">
+      <img src="images/Kashmir.jpg" alt=""/>
+    <figcaption>Kashmir</figcaption>
+  </figure>
+
+  <figure class="wave">
+      <img src="images/beach.jpg" alt=""/>
+    <figcaption>Beach</figcaption>
+  </figure>
+
+  <figure class="wave">
+      <img src="images/catmoun.jpg" alt=""/>
+    <figcaption>Mountain</figcaption>
+  </figure>
+
+  <figure class="wave">
+      <img src="images/maldives.jpg" alt=""/>
+    <figcaption>Maldives</figcaption>
+  </figure>
+</div>
+         <div class="row">
+  <figure class="wave">
+      <img src="images/Andaman.jpg" alt=""/>
+    <figcaption>Andman</figcaption>
+  </figure>
+
+  <figure class="wave">
+      <img src="images/Jodhpur_overview.jpg" alt=""/>
+    <figcaption>Jodhpur</figcaption>
+  </figure>
+
+  <figure class="wave">
+      <img src="images/Shimla4.jpg" alt=""/>
+    <figcaption>Shimala</figcaption>
+  </figure>
+
+  <figure class="wave">
+      <img src="images/Spiritual-Tour1.jpg" alt=""/>
+    <figcaption>Spiritual</figcaption>
+  </figure>
+</div>
+         <div class="row">
+  <figure class="wave">
+      <img src="images/bus.jpg" alt=""/>
+    <figcaption>Bus</figcaption>
+  </figure>
+
+  <figure class="wave">
+      <img src="images/heritage.jpg" alt=""/>
+    <figcaption>Heritage</figcaption>
+  </figure>
+
+  <figure class="wave">
+      <img src="images/people.jpg" alt=""/>
+    <figcaption>Mountain</figcaption>
+  </figure>
+
+  <figure class="wave">
+      <img src="images/sli1.jpg" alt=""/>
+    <figcaption>Maldives</figcaption>
+  </figure>
+</div>
+</div>
+        </h:form>
+        </ui:define> 
+</ui:composition>

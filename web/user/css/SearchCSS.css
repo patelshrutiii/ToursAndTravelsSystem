@@ -1,0 +1,89 @@
+/*search*/
+.home-trip-search {
+    padding: 55px 0 60px;
+}
+.primary-bg {
+    background-color: #01B3A7;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+.home-trip-search .trip-search-inner {
+    -webkit-align-items: flex-end;
+    -moz-align-items: flex-end;
+    -ms-align-items: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.d-flex {
+    display: flex!important;
+}
+form {
+    position: relative;
+}
+.home-trip-search .group-input {
+    width: 20%;
+}
+
+.home-trip-search .input1 {
+    width: 20%;
+    padding: 8px;
+    position: relative;
+}
+.home-trip-search label {
+    color: #ffffff;
+    display: inline-block;
+    line-height: 1;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+.home-trip-search select, .home-trip-search .input1 {
+   background-color: #F8F8F8;
+    border-radius: 18px;
+    color: #383838;
+    border: none;
+    height: 56px;
+    padding: 10px 17px;
+    width: 100%;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -ms-box-shadow: none;
+    -o-box-shadow: none;
+    box-shadow: none;
+    line-height: 1.6;
+}
+input[type=text], input[type=email], input[type=url], input[type=password], input[type=number], input[type=tel], input[type=range], input[type=date], input[type=month], input[type=week], input[type=time], input[type=datetime], input[type=datetime-local], input[type=color], textarea, select {
+    background-color: #F8F8F8;
+    border: 1px solid #d9d9d9;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    border-radius: 25px;
+    font-size: 14px;
+    padding: 9px 15px;
+}
+.search{
+    background-color: #f8f8f805 !important;
+    color: #ffffff !important;
+    border: 1px solid #ffffff !important;
+    border-radius: 25px !important;
+}
+.search:hover
+{
+    background-color: #017f76 !important;
+    border: none !important;
+}
+.submitSearch
+{
+        background-color: transparent;
+    border: none;
+    height: 56px;
+    color: white;
+}
+.i1{
+    padding: 0px 8px;
+}

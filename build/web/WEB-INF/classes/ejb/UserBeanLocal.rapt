@@ -1,0 +1,17 @@
+entity/Packagerating_.java
+entity/Places_.java
+entity/User_.java
+entity/SubPlaces_.java
+entity/Blog_.java
+entity/Managehotel_.java
+entity/City_.java
+entity/Category_.java
+entity/Payment_.java
+entity/Busdetails_.java
+entity/Enquiry_.java
+entity/Cancelbooking_.java
+entity/Packagebooking_.java
+entity/Offer_.java
+entity/State_.java
+entity/Role_.java
+entity/Packages_.java

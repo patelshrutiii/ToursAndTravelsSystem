@@ -1,0 +1,282 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="/user/userTemplate.xhtml"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:define name="content">
+  <head>
+      <style>
+          .right-sidebar {
+    padding-right: 40px;
+}
+.booking-content {
+    background-color: #f8f8f8;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    border-radius: 25px;
+    padding: 30px;
+    margin-bottom: 60px;
+}
+.booking-content .form-title {
+    margin-bottom: 30px;
+}
+.booking-content .form-title span {
+    background-color: #3A78C9;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    border-radius: 100%;
+    color: #ffffff;
+    display: inline-block;
+    font-size: 20px;
+    height: 50px;
+    line-height: 50px;
+    margin-right: 20px;
+    text-align: center;
+    width: 50px;
+}
+.booking-content .form-title h3 {
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+h3 {
+    font-size: 22px;
+    font-weight: 700;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 15px;
+    line-height: 1.2;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: #223645;
+    font-family: "Montserrat", sans-serif;
+}
+.form-group label {
+    display: block;
+    color: #383838;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.booking-content .form-title {
+    margin-bottom: 30px;
+}
+/*4no bhag*/
+.booking-section .price-table-summary {
+    background-color: #F8F8F8;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    border-radius: 25px;
+    margin-bottom: 50px;
+    padding: 30px;
+}
+.booking-section .price-table-summary .bg-title {
+    background-color: #3A78C9;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    border-radius: 25px;
+    color: #ffffff;
+    padding: 10px 15px;
+    text-align: center;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+table {
+    color: #737373;
+    margin: 0 0 1.5em;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-width: 1px 0 0 1px;
+    width: 100%;
+    font-size: 15px;
+}
+.booking-section .price-table-summary table tr:last-child td {
+    border-bottom: none;
+}
+.booking-section .widget-support-wrap {
+    background-color: #F8F8F8;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    border-radius: 25px;
+    padding: 30px;
+    text-align: center;
+}
+.booking-section .widget-support-wrap .icon {
+    font-size: 52px;
+    margin-bottom: 15px;
+    line-height: 1;
+}
+.fa, .fas {
+    font-weight: 900;
+}
+
+element.style {
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+user agent stylesheet
+div {
+    display: block;
+}
+.textfeild{
+    width: 100%;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+}
+      </style>
+  </head>
+    
+  <body>
+      
+      <div class="booking-section" style="margin-top:30px;">
+                  <div class="container">
+                      <c:forEach items="#{loginBean.packDesc}" var="H">
+                         <c:forEach items="#{loginBean.userinfo}" var="U">
+                     <div class="row">
+                        <div class="col-lg-8 right-sidebar">
+                           <!-- step one form html start -->
+                           <div class="booking-form-wrap">
+                              <h:form>
+                                 <div class="booking-content">
+                                    <div class="form-title">
+
+                                       <h3>Your Details</h3>
+                                    </div>
+                                     
+                                    <div class="row">
+                                       <div class="col-sm-12">
+                                          <div class="form-group">
+                                             <label>First name*</label>
+                                             <h:inputText class="textfeild" id="txtfn" value="#{U.firstName}" title="Description" required="true" requiredMessage="The First Name field is required." readonly="true"/>
+                                         <!--<input type="text" class="form-control" name="firstname_booking" required="true"/>-->
+                                          </div>
+                                       </div>
+                                       <div class="col-sm-12">
+                                          <div class="form-group">
+                                             <label>Middle name*</label>
+                                             <h:inputText id="txtmn" class="textfeild" value="#{U.middleName}" title="Description" required="true" requiredMessage="The middle name field is required." readonly="true"/>
+                                          </div>
+                                       </div>
+                                        <div class="col-sm-12">
+                                          <div class="form-group">
+                                             <label>Last name*</label>
+                                             <h:inputText id="txtln" class="textfeild" value="#{U.lastName}" title="Description" required="true" requiredMessage="The Last Name field is required." readonly="true"/>
+                                          </div>
+                                       </div>
+                                       
+                                       <div class="col-sm-12">
+                                          <div class="form-group">
+                                             <label>Email*</label>
+                                             <h:inputText id="txtemail" class="textfeild" value="#{U.emailID}" title="Description" required="true" requiredMessage="The Description field is required." readonly="true"/>
+                                         <!--<input type="email" class="form-control" name="email_booking"/>-->
+                                          </div>
+                                       </div>
+                                       <div class="col-sm-12">
+                                          <div class="form-group">
+                                             <label>Phone*</label>
+                                             <h:inputText id="txtCont" maxlength="9" class="textfeild" value="#{loginBean.bookContact}" required="true" requiredMessage="The Contact field is required.">
+                                                 
+                                                 </h:inputText> 
+                                             
+                                             <br/>
+    	                                        <h:message for="txtCont" style="color:red" />
+    	                                      <br/>
+                                          </div>
+                                       </div>
+                                        <div class="col-sm-12">
+                                          <div class="form-group">
+                                             <label>No of travelers*</label>
+                                             <h:inputText id="txtCpr" class="textfeild" value="#{loginBean.noOfTraveler}" title="NOOFTRA" required="true" requiredMessage="The NO Of Travelers field is required."/>
+                                                 <br/>
+    	                                        <h:message for="txtCpr" style="color:red" />
+    	                                      <br/>
+                                          </div>
+                                       </div>
+                                         </div>
+                                        
+                                        <h:commandButton class="btn btn-primary" value="Submit" action="#{loginBean.AddBooking(H,U)}"/>
+
+                                   
+                                          
+                                 </div>
+                              </h:form>
+
+                             
+                           </div>
+                        </div>
+                        <div class="col-lg-4">
+                           <div class="price-table-summary">
+                              <h4 class="bg-title">Summary</h4>
+                              <table>
+                                 <tbody>
+                                    <tr>
+                                       <td>
+                                          <strong>Packages cost </strong>
+                                       </td>
+                                       <td class="text-right">
+                                          #{H.packageCharge*113/100}
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td>
+                                          <strong>Dedicated tour guide</strong>
+                                       </td>
+                                       <td class="text-right">
+                                          	&#8377;60
+                                       </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td>
+                                          <strong>tax</strong>
+                                       </td>
+                                       <td class="text-right">
+                                          13%
+                                       </td>
+                                    </tr>
+                                     <tr class="total" style="border-top:2px ridge buttonface">
+                                       <td>
+                                          <strong>Total cost</strong>
+                                       </td>
+                                       <td class="text-right">
+                                           <strong>#{H.packageCharge}</strong>
+                                       </td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </div>
+                           <div class="widget-bg widget-support-wrap">
+                              <div class="icon">
+                                 <i class="fas fa-phone-volume"></i>
+                              </div>
+                              <div class="support-content">
+                                 <h5>HELP AND SUPPORT</h5>
+                                 <a href="telto:12345678" class="phone">+55 123 987 00</a>
+                                 <small>Monday to Friday 9.00am - 7.30pm</small>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                             </c:forEach>
+                      </c:forEach>
+                  </div>
+                          
+            </div>
+  </body>
+    </ui:define>
+</ui:composition>
+

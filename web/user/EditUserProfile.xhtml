@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="/user/userTemplate.xhtml"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:define name="content">
+        
+
+            
+        <div class="row">
+                <div class="col-lg-12 landingCard">
+                    <div class="panel panel-default">
+                       
+                        <div class="panel-body">
+                            <center>
+                            <h:form role="form" style="height:700px;width:700px;align-content: center;">
+                                <h4 style="    color: darkslategray;
+    margin-bottom: revert;"><u>Edit Profile</u> </h4>
+                                <div class="col-md-12">
+                                   
+                                    <div class="form-group">
+                                        <label>FirstName</label>
+                                        <h:inputText class="form-control" id="txtfName" validatorMessage="Enter only characters" value="#{loginBean.UFirstName}">
+<!--                                            <f:validateRegex pattern="^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$" />-->
+                                        </h:inputText>
+                                    </div>
+                                   <div class="form-group">
+                                        <label>MiddleName</label>
+                                        <h:inputText class="form-control" id="txtmName" validatorMessage="Enter only characters" value="#{loginBean.UMiddleName}">
+<!--                                            <f:validateRegex pattern="^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$" />-->
+                                        </h:inputText>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>LastName</label>
+                                        <h:inputText class="form-control" id="txtlName" validatorMessage="Enter only characters" value="#{loginBean.ULastName}">
+<!--                                            <f:validateRegex pattern="^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$" />-->
+                                        </h:inputText>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>EmailID</label>
+                                        <h:inputText class="form-control" id="txtemail" validatorMessage="Enter only characters" value="#{loginBean.UEmailID}">
+<!--                                            <f:validateRegex pattern="^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$" />-->
+                                        </h:inputText>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>ContactNo</label>
+                                        <h:inputText class="form-control" id="txtCNo" validatorMessage="Enter only characters" value="#{loginBean.UContactNumber}">
+<!--                                            <f:validateRegex pattern="^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$" />-->
+                                        </h:inputText>
+                                    </div>
+<!--                                    <div class="form-group">
+                                        <label>Password</label>
+                                        <h:inputText class="form-control" id="txtCpass" validatorMessage="Enter only characters" value="#{loginBean.UPassword}">
+                                            <f:validateRegex pattern="^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$" />
+                                        </h:inputText>
+                                    </div>-->
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 btnpadding">
+                                        <h:commandButton class="btn btn-primary" value="Edit" action="#{loginBean.EditProfile()}"></h:commandButton>
+                                        
+                                    </div>
+                                </div>
+                            </h:form>
+                                </center>
+                        </div>
+                        
+                        
+                        
+                        </div>
+                    </div><!-- /.col-->
+		</div><!-- /.row -->  
+    </ui:define>
+</ui:composition>
